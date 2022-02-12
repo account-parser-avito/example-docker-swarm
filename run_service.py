@@ -9,7 +9,7 @@ import uvicorn
 HOST = '0.0.0.0'
 PORT = 5010
 DEBUG = False
-RELOAD = True
+RELOAD = False
 
 
 if __name__ == "__main__":
