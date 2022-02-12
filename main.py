@@ -12,6 +12,10 @@ app = FastAPI()
 def read_root():
     return {"nodename": os.uname().nodename}
 
+@app.get("/data/")
+def update_root():
+    return {"data": "data"}
+
 @app.get("/exit/")
 def exit_root():
     sys.exit(0)
@@ -21,3 +25,4 @@ def exit_root():
 def break_root():
     sys.exit(1)
     # return {"nodename": os.uname().nodename}
+
