@@ -1,0 +1,27 @@
+version: '3.8'
+
+  
+services:
+  api:
+    image: hedrogen/docker-fastapi-image:latest
+    ports:
+      - 5010:5010
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+    #secrets:
+    #  - swarm-lessons-token
+    logging:
+      driver: json-file
+      options:
+        'max-size': '10m'
+        'max-file': '5'
+
+
+#secrets:
+#  swarm-lessons-token:
+#    external: true
